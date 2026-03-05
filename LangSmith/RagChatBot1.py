@@ -61,7 +61,7 @@ print(f"Created {len(splits)} chunks")
 # ---------------------------------------
 
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="text-embedding-004"
+    model="models/embedding-001"
 )
 
 

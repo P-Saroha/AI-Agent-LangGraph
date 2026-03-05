@@ -17,3 +17,13 @@ chain = prompt | model | parser
 # Run it
 result = chain.invoke({"question": "What is the capital of Peru?"})
 print(result)
+
+
+
+
+
+
+
+
+
+
