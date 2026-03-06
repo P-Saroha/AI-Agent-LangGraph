@@ -9,7 +9,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Tools
 from langchain_core.tools import tool
-from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.tools.ddg_search import DuckDuckGoSearchRun
 
 # Agent
 from langchain.agents import create_react_agent
@@ -17,12 +17,14 @@ from langchain.agents import AgentExecutor
 
 # Prompt hub
 from langchain import hub
+import os 
 
+os.environ['LANGSMITH_PROJECT'] = 'Weather-Agent'
 
 # -------------------------
 # Search Tool
 # -------------------------
-search_tool = DuckDuckGoSearchRun()
+search_tool = DuckDuckGoSearchRun(max_results=5)
 
 
 # -------------------------
@@ -80,7 +82,7 @@ agent_executor = AgentExecutor(
 # Chat Loop
 # -------------------------
 while True:
-    q = input("\nAsk: ")
+    q = input("\nAsk: Please Ask Question: ")
 
     if q.lower() in ["exit", "quit"]:
         break
