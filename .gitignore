@@ -11,3 +11,9 @@ Chatbot/chatbot_db
 Chatbot/chatbot_db-*
 chatbot_db
 chatbot_db-*
+
+# RAG local data (uploaded docs + generated index)
+Chatbot/knowledge_base/*
+!Chatbot/knowledge_base/.gitkeep
+Chatbot/faiss_index/*
+!Chatbot/faiss_index/.gitkeep
