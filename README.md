@@ -10,6 +10,9 @@ An end-to-end AI chatbot built with LangGraph and LangChain. This project includ
 - Real-time tools for weather, news, stock prices, and time
 - Structured answers with sources for tool-based responses
 - HITL approval for low-confidence document answers
+- A full collection of LangGraph workflow patterns (sequential, parallel, conditional, iterative)
+- Short-term memory experiments (persistence, trimming, summarization, deletion)
+- LangSmith tracing demos and RAG chatbot variants
 
 ## Key Features
 
@@ -39,6 +42,9 @@ An end-to-end AI chatbot built with LangGraph and LangChain. This project includ
 - How to format tool answers with consistent sources
 - How to add fallback logic when tools fail
 - How to manage multi-thread chat history in a UI
+- How to build sequential, parallel, conditional, and iterative graphs
+- How to experiment with STM: persistence, trimming, summarization, deletion
+- How to trace and evaluate runs with LangSmith
 
 ## Project Structure
 
@@ -50,9 +56,24 @@ AI-Agent-LangGraph/
 		knowledge_base/         # Uploaded docs for RAG
 		faiss_index/            # Per-thread FAISS indexes
 		docker-compose.yml      # Postgres for long-term memory
+	ConditionalWorkflows/     # Conditional graphs (notebooks)
+	IterativeWorkflows/       # Iterative loops (notebooks)
+	ParallelWorkflows/        # Parallel graph patterns (notebooks)
+	SequentialWorkflows/      # Sequential chains (notebooks)
+	ShotTermMemeoryLLM/       # Short-term memory experiments (notebooks)
+	LangSmith/                # LangSmith tracing examples
 	requirements.txt
 	README.md
 ```
+
+## Learning Modules (Notebooks)
+
+- **ConditionalWorkflows**: decision-based flows (e.g., review or quadratic logic)
+- **IterativeWorkflows**: looped generation workflows (e.g., post refinement)
+- **ParallelWorkflows**: parallel execution patterns (e.g., essay + batsman tasks)
+- **SequentialWorkflows**: step-by-step chains (prompt chaining, BMI, basic flow)
+- **ShotTermMemeoryLLM**: STM experiments (persistence, deletion, summarization, trimming)
+- **LangSmith**: tracing demos and RAG chatbot variants
 
 ## Setup
 
@@ -97,5 +118,5 @@ streamlit run chatbotFrontend.py
 
 ## Notes
 
-- The main agent is inside [Chatbot/](Chatbot/).
-- If you want full workflow details, see [Chatbot/README.md](Chatbot/README.md).
+- The main production agent is inside [Chatbot/](Chatbot/).
+- For full chatbot workflow details, see [Chatbot/README.md](Chatbot/README.md).
