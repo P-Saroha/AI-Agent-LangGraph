@@ -6,7 +6,7 @@ An end-to-end AI chatbot built with LangGraph and LangChain. This project includ
 
 - A production-style chatbot with deterministic routing + LLM gating
 - RAG over local documents with per-thread indexes
-- Long-term memory (Postgres) + short-term memory (session context)
+- Long-term memory (Postgres) + short-term memory (summary + last-N)
 - Real-time tools for weather, news, stock prices, and time
 - Structured answers with sources for tool-based responses
 - HITL approval for low-confidence document answers
@@ -22,9 +22,9 @@ An end-to-end AI chatbot built with LangGraph and LangChain. This project includ
 - **Stock tool**: Yahoo Finance via `yfinance`
 - **Time tool**: local system time
 - **Memory**:
-	- STM (recent messages)
+	- STM (summary of older chat + last-N recent messages)
 	- LTM (Postgres structured facts)
-	- Auto-memory for stable facts
+	- Explicit remember support for user requests
 - **RAG**:
 	- Upload PDFs/TXT/MD to `knowledge_base/`
 	- Per-thread FAISS index
@@ -51,8 +51,11 @@ An end-to-end AI chatbot built with LangGraph and LangChain. This project includ
 ```
 AI-Agent-LangGraph/
 	Chatbot/
-		chatbotBackend.py       # Agent logic, tools, memory, RAG
+		chatbotBackend.py       # Agent logic and routing
 		chatbotFrontend.py      # Streamlit UI
+		chatbot_memory.py       # LTM + STM memory logic
+		chatbot_rag.py          # RAG retrieval and index helpers
+		chatbot_tools.py        # Tool routing and tool helpers
 		knowledge_base/         # Uploaded docs for RAG
 		faiss_index/            # Per-thread FAISS indexes
 		docker-compose.yml      # Postgres for long-term memory
