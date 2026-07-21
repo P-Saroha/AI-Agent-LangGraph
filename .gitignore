@@ -5,6 +5,13 @@ venv/
 # Python cache artifacts
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Chatbot runtime session files (local user state, should not be in repo)
+Chatbot/.active_thread_*
+Chatbot/.user_id
 
 # Chatbot runtime database files (local only)
 Chatbot/chatbot_db
@@ -19,4 +26,11 @@ Chatbot/faiss_index/*
 !Chatbot/faiss_index/.gitkeep
 
 # Interview preparation guide (personal use, not for public repo)
-Chatbot/prep/ INTERVIEW_GUIDE.md
+Chatbot/INTERVIEW_GUIDE.md
+Chatbot/prep/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
