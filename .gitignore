@@ -17,3 +17,6 @@ Chatbot/knowledge_base/*
 !Chatbot/knowledge_base/.gitkeep
 Chatbot/faiss_index/*
 !Chatbot/faiss_index/.gitkeep
+
+# Interview preparation guide (personal use, not for public repo)
+Chatbot/prep/INTERVIEW_GUIDE.md
