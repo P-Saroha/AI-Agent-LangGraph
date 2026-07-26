@@ -25,7 +25,7 @@ Chatbot/knowledge_base/*
 Chatbot/faiss_index/*
 !Chatbot/faiss_index/.gitkeep
 
-# Interview preparation guide (personal use, not for public repo)
+# Interview preparation guide 
 Chatbot/INTERVIEW_GUIDE.md
 Chatbot/prep/
 
@@ -34,3 +34,4 @@ Chatbot/prep/
 .idea/
 *.swp
 *.swo
+HYBRID_SEARCH_SUMMARY.txt
